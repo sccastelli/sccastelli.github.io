@@ -1,54 +1,144 @@
-<html>
-    <head>
-        <title>Lab 1</title>
-    </head>
-    <body>
-        <h2>Sofia Catalina Castelli Lacunza</h2>
-        <h3>Ingeneria Civil en Computacion</h3>
-        <h3>2020</h3>
-        <p>Link to GitHub: <a href="https://github.com/sccastelli/sccastelli.github.io.git">GitHub sccastelli</a></p>
-        <p>breve</p>
-        <table>
-            <tr>
-                <td>Skill</td>
-                <td>Level</td>
-            </tr>
-            <tr>
-                <td>Python</td>
-                <td>Expert</td>
-            </tr>
-            <tr>
-                <td>JavaScript</td>
-                <td>Basic</td>
-            </tr>
-            <tr>
-                <td>HTML/CSS</td>
-                <td>Basic</td>
-            </tr>
-            <tr>
-                <td>C/C++</td>
-                <td>Average</td>
-            </tr>
-            <tr>
-                <td>SQL</td>
-                <td>Average</td>
-            </tr>
-            <tr>
-                <td>Git</td>
-                <td>Advance</td>
-            </tr>
-            <tr>
-                <td>Excel</td>
-                <td>Expert</td>
-            </tr>
-            <tr>
-                <td>English</td>
-                <td>Advance</td>
-            </tr>
-            <tr>
-                <td>Español</td>
-                <td>Native</td>
-            </tr>
-        </table>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #fffefa !important;
+        }
+
+        h2 {
+            font-family: "Monaco", monospace;
+            border-radius: 5px;
+            padding: 40px;
+            color: #f3ccf1;
+            background-color: #c24a88;
+            transition: background-color 0.5s; /* Agregamos una transición para un cambio suave */
+        }
+
+        h3 {
+            font-family: "Monaco", monospace;
+            color: #c24a88;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #c24a88;
+            color: white;
+        }
+
+        .button {
+            padding: 8px 20px;
+            color: rgb(151, 41, 57);
+            background-color: rgba(235, 171, 180, 0.805);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .input-field {
+            padding: 8px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .output {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .custom-bg {
+            border-radius: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="customHeader">Sofia Catalina Castelli Lacunza</h2>
+    <h3>Ingeniería Civil en Computación</h3>
+    <h3>2020</h3>
+    <p>Link to GitHub: <a href="https://github.com/sccastelli/sccastelli.github.io.git">GitHub sccastelli</a></p>
+    <p>rellenar todavia</p>
+    <table>
+        <tr>
+            <th>Skill</th>
+            <th>Level</th>
+        </tr>
+        <tr>
+            <td>Python</td>
+            <td>Expert</td>
+        </tr>
+        <tr>
+            <td>JavaScript</td>
+            <td>Basic</td>
+        </tr>
+        <tr>
+            <td>HTML/CSS</td>
+            <td>Basic</td>
+        </tr>
+        <tr>
+            <td>C/C++</td>
+            <td>Average</td>
+        </tr>
+        <tr>
+            <td>SQL</td>
+            <td>Average</td>
+        </tr>
+        <tr>
+            <td>Git</td>
+            <td>Advance</td>
+        </tr>
+        <tr>
+            <td>Excel</td>
+            <td>Expert</td>
+        </tr>
+        <tr>
+            <td>English</td>
+            <td>Advance</td>
+        </tr>
+        <tr>
+            <td>Español</td>
+            <td>Native</td>
+        </tr>
+    </table>
+
+    <div class="output">
+        <p id="outputText"></p>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <input type="text" class="input-field" id="colorInput" placeholder="Enter color name...">
+        <button class="button" onclick="changeTheme()">Change Theme</button>
+    </div>
+
+    <script>
+        var elementsToChangeColor = ['body', 'h2', 'h3', 'th', '.button'];
+
+        function changeTheme() {
+            var newColor = document.getElementById("colorInput").value;
+
+            elementsToChangeColor.forEach(function(element) {
+                document.querySelectorAll(element).forEach(function(item) {
+                    item.style.backgroundColor = newColor;
+                });
+            });
+        }
+    </script>
+</body>
 </html>
