@@ -15,14 +15,11 @@
             font-family: "Monaco", monospace;
             border-radius: 5px;
             padding: 40px;
-            color: #f3ccf1;
-            background-color: #c24a88;
             transition: background-color 0.5s; /* Agregamos una transición para un cambio suave */
         }
 
         h3 {
             font-family: "Monaco", monospace;
-            color: #c24a88;
         }
 
         table {
@@ -38,14 +35,14 @@
         }
 
         th {
-            background-color: #c24a88;
+            background-color: #007bff;
             color: white;
         }
 
         .button {
             padding: 8px 20px;
-            color: rgb(151, 41, 57);
-            background-color: rgba(235, 171, 180, 0.805);
+            color: rgb(21, 21, 21) !important;
+            background-color: #e9e9e9 !important;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -67,10 +64,52 @@
             border-radius: 10px;
             padding: 10px;
         }
+
+        .theme-color {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <h2 id="customHeader">Sofia Catalina Castelli Lacunza</h2>
+    <div class="output">
+        <p id="outputText"></p>
+        <p id="themeText"></p>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <input type="text" class="input-field" id="themeInput" placeholder="Enter 'dark' or 'light'">
+        <button class="button" onclick="setTheme()">Apply Theme</button>
+    </div>
+
+    <script>
+        var themes = {
+            'dark': { bgColor: '#c24a88', textColor: '#f3ccf1' },
+            'light': { bgColor: '#f3ccf1', textColor: '#c24a88' }
+        };
+
+        function setTheme() {
+            var themeName = document.getElementById("themeInput").value.toLowerCase();
+            var elementsToChange = document.querySelectorAll('body, h2, h3, table, th, td');
+            var themeText = document.getElementById("themeText");
+
+            if (themeName in themes) {
+                elementsToChange.forEach(function(element) {
+                    element.style.backgroundColor = themes[themeName].bgColor;
+                    element.style.color = themes[themeName].textColor;
+                });
+                var oppositeThemeName = (themeName === 'dark') ? 'light' : 'dark';
+
+                document.querySelectorAll('p').forEach(function(paragraph) {
+                paragraph.style.backgroundColor = themes[oppositeThemeName].bgColor;
+                paragraph.style.color = themes[oppositeThemeName].textColor;
+            });
+                themeText.textContent = 'Current Theme: ' + themeName.charAt(0).toUpperCase() + themeName.slice(1);
+            } else {
+                themeText.textContent = 'Invalid theme. Please enter "dark" or "light".';
+            }
+        }
+    </script>
     <h3>Ingeniería Civil en Computación</h3>
     <h3>2020</h3>
     <p>Link to GitHub: <a href="https://github.com/sccastelli/sccastelli.github.io.git">GitHub sccastelli</a></p>
@@ -117,28 +156,5 @@
             <td>Native</td>
         </tr>
     </table>
-
-    <div class="output">
-        <p id="outputText"></p>
-    </div>
-
-    <div style="text-align: center; margin-top: 20px;">
-        <input type="text" class="input-field" id="colorInput" placeholder="Enter color name...">
-        <button class="button" onclick="changeTheme()">Change Theme</button>
-    </div>
-
-    <script>
-        var elementsToChangeColor = ['body', 'h2', 'h3', 'th', '.button'];
-
-        function changeTheme() {
-            var newColor = document.getElementById("colorInput").value;
-
-            elementsToChangeColor.forEach(function(element) {
-                document.querySelectorAll(element).forEach(function(item) {
-                    item.style.backgroundColor = newColor;
-                });
-            });
-        }
-    </script>
 </body>
 </html>
