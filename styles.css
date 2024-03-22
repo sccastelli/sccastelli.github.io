@@ -1,0 +1,81 @@
+.light {
+    font-family: "American Typewriter", serif;
+    color: #f3ccf1;
+    background-color: #c24a88;
+}
+
+body {
+    font-family: "Times New Roman", sans-serif;
+    padding: 20px;
+    background-color: #f6ddfc !important;
+}
+
+h2 {
+    font-size: 50px;
+    border-radius: 15px;
+    padding: 100px;
+    transition: background-color 0.5s; 
+}
+
+h3 {
+    border-radius: 7px;
+    font-size: 35px;
+    padding: 50px;
+    transition: background-color 0.5s;
+}
+
+p{
+    color: #c24a88;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    transition: background-color 0.5s;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #000000 !important;
+    border-left: 1px solid #000000 !important;
+    border-right: 1px solid #000000 !important;
+    text-align: middle;
+    color: #000000;
+    background-color: #f3ccf1;
+    transition: background-color 0.5s;
+}
+
+th {
+    color: #f3ccf1;
+    background-color: #ca66d4;
+    transition: background-color 0.5s;
+}
+
+.button {
+    padding: 8px 20px;
+    color: rgb(21, 21, 21) !important;
+    background-color: #fdf3f3 !important;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-field {
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.output {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.custom-bg {
+    border-radius: 10px;
+    padding: 10px;
+}

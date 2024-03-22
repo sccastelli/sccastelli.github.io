@@ -4,104 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab 1</title>
-    <style>
-        .light {
-            font-family: "American Typewriter", serif;
-            color: #f3ccf1;
-            background-color: #c24a88;
-        }
-        body {
-            font-family: "Times New Roman", sans-serif;
-            padding: 20px;
-            background-color: #f6ddfc !important;
-        }
-
-        h2 {
-            font-size: 50px;
-            border-radius: 15px;
-            padding: 100px;
-            transition: background-color 0.5s; 
-        }
-
-        h3 {
-            border-radius: 7px;
-            font-size: 35px;
-            padding: 50px;
-            transition: background-color 0.5s;
-        }
-
-        p{
-            color: #c24a88;
-            margin-top: 20px;
-            font-size: 20px;
-        }
-
-        table {
-            width: 80%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            transition: background-color 0.5s;
-        }
-
-        th, td {
-            padding: 10px;
-            border-bottom: 1px solid #000000 !important;
-            border-left: 1px solid #000000 !important;
-            border-right: 1px solid #000000 !important;
-            text-align: middle;
-            color: #000000;
-            background-color: #f3ccf1;
-            transition: background-color 0.5s;
-        }
-
-        th {
-            color: #f3ccf1;
-            background-color: #ca66d4;
-            transition: background-color 0.5s;
-        }
-
-        .button {
-            padding: 8px 20px;
-            color: rgb(21, 21, 21) !important;
-            background-color: #fdf3f3 !important;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .input-field {
-            padding: 8px;
-            margin-right: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        .output {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .custom-bg {
-            border-radius: 10px;
-            padding: 10px;
-        }
-    </style>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <h2 id="customHeader", class="light">Sofia Catalina Castelli Lacunza</h2>
-    <div class="output">
-        <p id="outputText"></p>
-        <p id="themeText"></p>
-    </div>
-    
-    <div style="text-align: center; margin-top: 20px;">
-        <div style="display: inline-block;">
-            <p style="display: inline;">Para cambiar el tema de la página:</p>
-            <input type="text" class="input-field" id="themeInput" placeholder="Enter 'dark' or 'light'">
-            <button class="button" onclick="setTheme()">Cambiar</button>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h2 id="customHeader" class="light text-center">Sofia Catalina Castelli Lacunza</h2>
+                <div class="output">
+                    <p id="outputText"></p>
+                    <p id="themeText"></p>
+                </div>
+                <div class="text-center">
+                    <p>Para cambiar el tema de la página:</p>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control input-field" id="themeInput" placeholder="Enter 'dark' or 'light'">
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary button" onclick="setTheme()">Cambiar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    
     <script>
         var themes = {
             'dark': { bgColor: '#671785', textColor: '#f8a9ff' },
@@ -109,77 +35,92 @@
             'dark 2': { bgColor: '#f8a9ff', textColor: '#671785' },
             'light 2': { bgColor: '#f3ccf1', textColor: '#c24a88' },
         };
-    
+
         function setTheme() {
             var themeName = document.getElementById("themeInput").value.toLowerCase();
             var elementsToChange = document.querySelectorAll('body, h2, h3, table, td');
             var themeText = document.getElementById("themeText");
-    
+
             if (themeName in themes) {
                 elementsToChange.forEach(function(element) {
                     element.style.backgroundColor = themes[themeName].bgColor;
                     element.style.color = themes[themeName].textColor;
                 });
-    
+
                 var oppositeThemeName = (themeName === 'dark') ? 'dark 2' : 'light 2';
-    
+
                 document.querySelectorAll('p').forEach(function(paragraph) {
                     paragraph.style.color = themes[oppositeThemeName].textColor;
                 });
-    
+
                 document.querySelectorAll('th').forEach(function(header) {
                     header.style.backgroundColor = themes[oppositeThemeName].bgColor;
                     header.style.color = themes[oppositeThemeName].textColor;
                 });
-    
+
                 themeText.textContent = 'Tema actual: ' + themeName.charAt(0).toUpperCase() + themeName.slice(1);
             } else {
                 themeText.textContent = 'Tema invalido. Debe ser "dark" or "light".';
             }
         }
     </script>
-    
-    <h3 class="light">Ingeniería Civil en Computación</h3>
-    <h3 class="light">2020</h3>
-    <p>Link to GitHub: <a href="https://github.com/sccastelli/sccastelli.github.io.git">GitHub sccastelli</a></p>
-    <p>Estudinte de Ingeneria Civil en Computacion, apasionada por la resolución de problemas a través de la programación. Con experiencia destacada en Python y habilidades también tengo conocimientos básicos en JavaScript y HTML/CSS, así como habilidades promedio en C/C++ y SQL. Mi enfoque es siempre aprender y mejorar, buscando oportunidades para ampliar mi conocimiento y aplicarlo en nuevos desafíos.</p>
-    <table>
-        <tr>
-            <th>Skill</th>
-            <th>Level</th>
-        </tr>
-        <tr>
-            <td>Python</td>
-            <td>Expert</td>
-        </tr>
-        <tr>
-            <td>JavaScript</td>
-            <td>Basic</td>
-        </tr>
-        <tr>
-            <td>HTML/CSS</td>
-            <td>Basic</td>
-        </tr>
-        <tr>
-            <td>C/C++</td>
-            <td>Average</td>
-        </tr>
-        <tr>
-            <td>SQL</td>
-            <td>Average</td>
-        </tr>
-        <tr>
-            <td>Git</td>
-            <td>Average</td>
-        </tr>
-        <tr>
-            <td>English</td>
-            <td>Advance</td>
-        </tr>
-        <tr>
-            <td>Español</td>
-            <td>Native</td>
-        </tr>
-    </table>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="light text-center">Ingeniería Civil en Computación</h3>
+                <h3 class="light text-center">2020</h3>
+                <p class="text-center">Link to GitHub: <a href="https://github.com/sccastelli/sccastelli.github.io.git">GitHub sccastelli</a></p>
+                <p class="text-center">Estudiante de Ingeniería Civil en Computación, apasionada por la resolución de problemas a través de la programación. Con experiencia destacada en Python y habilidades también tengo conocimientos básicos en JavaScript y HTML/CSS, así como habilidades promedio en C/C++ y SQL. Mi enfoque es siempre aprender y mejorar, buscando oportunidades para ampliar mi conocimiento y aplicarlo en nuevos desafíos.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Skill</th>
+                            <th>Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Python</td>
+                            <td>Expert</td>
+                        </tr>
+                        <tr>
+                            <td>JavaScript</td>
+                            <td>Basic</td>
+                        </tr>
+                        <tr>
+                            <td>HTML/CSS</td>
+                            <td>Basic</td>
+                        </tr>
+                        <tr>
+                            <td>C/C++</td>
+                            <td>Average</td>
+                        </tr>
+                        <tr>
+                            <td>SQL</td>
+                            <td>Average</td>
+                        </tr>
+                        <tr>
+                            <td>Git</td>
+                            <td>Average</td>
+                        </tr>
+                        <tr>
+                            <td>English</td>
+                            <td>Advance</td>
+                        </tr>
+                        <tr>
+                            <td>Español</td>
+                            <td>Native</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+
