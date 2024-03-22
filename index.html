@@ -8,10 +8,34 @@
     <link href="styl.css" rel="stylesheet">
 </head>
 <body class="body">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="d5ukw4s-a64e9eda-1204-4532-8f60-b920a4b23eb5.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                Mi Sitio Web
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#medio">Centro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#table">Tabla</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <h2 id="customHeader" class="light text-center">Sofia Catalina Castelli Lacunza</h2>
+                <h2 id="inicio" class="light text-center">Sofia Catalina Castelli Lacunza</h2>
                 <div class="output">
                     <p id="outputText"></p>
                     <p id="themeText"></p>
@@ -34,7 +58,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h3 class="h3 text-center">Ingeniería Civil en Computación</h3>
+                <h3 id="medio" class="h3 text-center">Ingeniería Civil en Computación</h3>
                 <h3 class="h3 text-center">2020</h3>
                 <p class="text-center">Link to GitHub: <a href="https://github.com/sccastelli/sccastelli.github.io.git">GitHub sccastelli</a></p>
                 <p class="text-center">Estudiante de Ingeniería Civil en Computación, apasionada por la resolución de problemas a través de la programación. Con experiencia destacada en Python y habilidades también tengo conocimientos básicos en JavaScript y HTML/CSS, así como habilidades promedio en C/C++ y SQL. Mi enfoque es siempre aprender y mejorar, buscando oportunidades para ampliar mi conocimiento y aplicarlo en nuevos desafíos.</p>
@@ -42,7 +66,7 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <table class="table">
+                <table id="table" class="table">
                     <thead>
                         <tr>
                             <th>Skill</th>
