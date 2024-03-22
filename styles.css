@@ -2,25 +2,25 @@
     font-family: "American Typewriter", serif;
     color: #f3ccf1;
     background-color: #c24a88;
+    font-size: 50px;
+    border-radius: 15px;
+    padding: 20%;
+    transition: background-color 0.5s;
 }
 
-body {
+.body {
     font-family: "Times New Roman", sans-serif;
     padding: 20px;
     background-color: #f6ddfc !important;
 }
 
-h2 {
-    font-size: 50px;
-    border-radius: 15px;
-    padding: 100px;
-    transition: background-color 0.5s; 
-}
-
-h3 {
+.h3 {
+    font-family: "American Typewriter", serif;
+    color: #f3ccf1;
+    background-color: #c24a88;
     border-radius: 7px;
     font-size: 35px;
-    padding: 50px;
+    padding: 10%;
     transition: background-color 0.5s;
 }
 
@@ -38,7 +38,7 @@ table {
 }
 
 th, td {
-    padding: 10px;
+    padding: 5%;
     border-bottom: 1px solid #000000 !important;
     border-left: 1px solid #000000 !important;
     border-right: 1px solid #000000 !important;
